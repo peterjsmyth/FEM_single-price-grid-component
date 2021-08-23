@@ -1,0 +1,8 @@
+@use '../utilities/colors';
+@use '../utilities/fonts';
+
+body {
+    background-color: colors.$clr-secondary-ltgrey;
+    padding-top: 7.2rem;
+    font-family: fonts.$fnt-karla;
+}

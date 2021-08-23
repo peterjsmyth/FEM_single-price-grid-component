@@ -1,0 +1,166 @@
+@use '../utilities/colors';
+
+
+.cards {
+    max-width: 30.1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.join, .subs, .why {
+    list-style: none;
+    padding: {
+        top: 3rem;
+        bottom:3rem;
+      }
+    &__wrapper {
+        width: 80%;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+}
+
+.join {
+    background-color: colors.$clr-white;
+    border-radius: 0.5rem 0.5rem 0 0;
+    &__title{
+        color: colors.$clr-primary-cyandk;
+        font: {
+            size: 1.75rem;
+            weight: 700;
+        }
+        // letter-spacing: 1.3px;
+    }
+    &__subtitle, &__text {
+        padding-top: 3rem;
+        font-size: 1.3rem;
+    }
+    &__subtitle {
+        color: colors.$clr-primary-bryellow;
+        font-weight: 700;
+    }
+    &__text {
+        color: colors.$clr-grey;
+        line-height: 2;
+        font-weight: 400;
+    }
+    &__btn {
+        text-decoration: none;
+    }
+}
+
+.subs {
+    background-color: colors.$clr-primary-cyandk;
+    color: colors.$clr-white80;
+    &__title {
+        // letter-spacing: 1.75px;
+        font: {
+            size: 1.75rem;
+            weight: 500;
+        }
+    }
+    &__cost {
+        color: colors.$clr-white;
+        padding-top: 2rem;
+        font: {
+            size: 3rem;
+            weight: 400;
+        }
+        // letter-spacing: 1.3px;
+        &::after {
+            color: colors.$clr-white50;
+            content: "per month";
+            display: inline-block;
+            font: {
+                size: 1.3rem;
+                weight: 500;
+            }
+            letter-spacing: 1.3px;
+            transform: translateX(1rem);
+            // line-height: 2;
+            vertical-align: middle;
+        }
+    }
+    &__text {
+        font-size: 1.3rem;
+        padding-top: 1.75rem;
+    }
+    &__btn {
+        background-color: colors.$clr-primary-bryellow;
+        border-radius: 0.5rem;
+        box-shadow: 2px 4px 5px 2px hsla(0, 0%, 0%, 0.1);
+        color: colors.$clr-white80;
+        display: inline-block;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        padding: {
+            top: 1rem;
+            bottom: 1rem;
+        }
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+    }
+}
+
+.why {
+    background-color: colors.$clr-primary-cyanlt;
+    color: colors.$clr-white80;
+    border-radius: 0 0 0.5rem 0.5rem;
+    &__title {
+        font-size: 1.5rem;
+    }
+    &__text {
+        font-size: 1.3rem;
+        &:first-of-type {
+            color: colors.$clr-white50;
+            margin-top: 2rem;
+        }
+        &:not(:first-of-type) {
+            color: colors.$clr-white50;
+            margin-top: 0.75rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 764px) {
+    .main {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .cards {
+        max-width: 62.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "join-area join-area"
+            "subs-area why-area";
+    }
+
+    .join {
+        grid-area: join-area;
+        &__wrapper {
+            width: 90%;
+        }
+    }
+
+    .subs {
+        grid-area: subs-area;
+        border-radius: 0 0 0 0.5rem;
+        &__btn {
+            margin-top: 4rem;
+        }
+    }
+
+    .why {
+        grid-area: why-area;
+        border-radius: 0 0 0.5rem 0;
+    }
+
+}
